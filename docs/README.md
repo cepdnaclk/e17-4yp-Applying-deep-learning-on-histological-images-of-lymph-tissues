@@ -3,8 +3,9 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-4yp-project-template
-title:
+repository-name: e17-4yp-Applying-deep-learning-on-histological-images-of-lymph-tissues
+title: Applying deep learning on histological images of lymph tissues
+
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
@@ -13,14 +14,14 @@ title:
 
 #### Team
 
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
+- E/17/230, Nishankar S, [email](mailto:e17230@eng.pdn.ac.lk)
+- E/17/256, Piriyaraj S, [email](mailto:e17256@eng.pdn.ac.lk)
+- E/17/358, Varanaraj N, [email](mailto:e17358@eng.pdn.ac.lk)
 
 #### Supervisors
 
-- Name, [email](mailto:name@eng.pdn.ac.lk)
-- Name, [email](mailto:name@eng.pdn.ac.lk)
+- Dr. Swarnalatha Radhakrishnan, [email](mailto:swarnar@eng.pdn.ac.lk)
+- Dr. Pratheepan, [email](mailto:pratheepan@uwu.ac.lk)
 
 #### Table of content
 
@@ -34,10 +35,6 @@ title:
 8. [Links](#links)
 
 ---
-
-DELETE THIS SAMPLE before publishing to GitHub Pages !!!
-This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
-![Sample Image](./images/sample.png)
 
 
 ## Abstract
@@ -66,8 +63,8 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 [//]: # ( NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS )
 
-- [Project Repository](https://github.com/cepdnaclk/repository-name)
-- [Project Page](https://cepdnaclk.github.io/repository-name)
+- [Project Repository](https://github.com/cepdnaclk/e17-4yp-Applying-deep-learning-on-histological-images-of-lymph-tissues)
+- [Project Page](https://cepdnaclk.github.io/e17-4yp-Applying-deep-learning-on-histological-images-of-lymph-tissues/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
