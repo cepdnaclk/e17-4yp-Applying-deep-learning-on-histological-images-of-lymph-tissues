@@ -39,7 +39,7 @@ def extract_and_save_feature_extractor(image_folder_path, save_path):
 
 
 # Define the path to your image folder
-image_folder_path = os.path.abspath('../../MedNET/cancer images/image')
+image_folder_path = os.path.abspath('../../MedNET/cancer images/images')
 
 # Define the path to save the feature extractor model
 save_path = os.path.abspath('../../MedNET/model/VGG16_feature_extractor.h5')
