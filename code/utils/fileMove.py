@@ -18,6 +18,6 @@ def move_images(source_path, destination_path):
                 print(f"Moved: {source_file_path} -> {destination_file_path}")
 
 # Example usage:
-source_path = '/path/to/source/directory'
-destination_path = '/path/to/destination/directory'
+source_path = '/home/e17358/4yp/MedNET/Breast Histopathology Images/IDC_regular_ps50_idx5/'
+destination_path = '/home/e17358/4yp/MedNET/medicalimages/'
 move_images(source_path, destination_path)
