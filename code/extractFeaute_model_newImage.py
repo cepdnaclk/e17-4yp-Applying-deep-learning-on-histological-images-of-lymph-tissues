@@ -59,8 +59,13 @@ def extract_and_save_feature_extractor(image_folder_path, model_name, save_path)
     features_list = []
     for file_name in image_file_names:
         image_path = os.path.join(image_folder_path, file_name)
+        try:
+            img = load_img(image_path, target_size=base_model.input_shape[1:3])
+        except Exception as e:
+            print(f"Error loading image {image_path}: {e}")
+            continue
+
         # Resize to model's input size
-        img = load_img(image_path, target_size=base_model.input_shape[1:3])
         img_array = img_to_array(img)
         # Preprocess input according to the model's requirements
         preprocessed_img = model_dict[model_name.lower()][1](img_array)
