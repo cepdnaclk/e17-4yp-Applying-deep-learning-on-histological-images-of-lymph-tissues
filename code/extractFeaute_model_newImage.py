@@ -7,7 +7,7 @@ from tensorflow.keras.applications import (VGG16, ResNet50, MobileNet,
                                            DenseNet121, DenseNet169, DenseNet201,
                                            EfficientNetB0, EfficientNetB1, EfficientNetB2,
                                            EfficientNetB3, EfficientNetB4, EfficientNetB5,
-                                           EfficientNetB6, EfficientNetB7, SqueezeNet)
+                                           EfficientNetB6, EfficientNetB7)
 from tensorflow.keras.models import Model
 from tensorflow.keras.applications.vgg16 import preprocess_input as vgg_preprocess_input
 from tensorflow.keras.applications.resnet50 import preprocess_input as resnet_preprocess_input
@@ -16,7 +16,6 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input as incep
 from tensorflow.keras.applications.inception_resnet_v2 import preprocess_input as inception_resnet_v2_preprocess_input
 from tensorflow.keras.applications.densenet import preprocess_input as densenet_preprocess_input
 from tensorflow.keras.applications.efficientnet import preprocess_input as efficientnet_preprocess_input
-from tensorflow.keras.applications.squeezenet import preprocess_input as squeezenet_preprocess_input
 from tensorflow.keras.models import load_model
 
 
@@ -39,7 +38,6 @@ def extract_and_save_feature_extractor(image_folder_path, model_name, save_path)
         'efficientnetb5': (EfficientNetB5, efficientnet_preprocess_input),
         'efficientnetb6': (EfficientNetB6, efficientnet_preprocess_input),
         'efficientnetb7': (EfficientNetB7, efficientnet_preprocess_input),
-        'squeezenet': (SqueezeNet, squeezenet_preprocess_input),
     }
 
     if model_name.lower() not in model_dict:
@@ -82,7 +80,7 @@ def test_feature_extraction(image_folder_path, save_dir):
     model_names = ['vgg16', 'resnet50', 'mobilenet', 'inceptionv3',
                    'inceptionresnetv2', 'densenet121', 'densenet169', 'densenet201',
                    'efficientnetb0', 'efficientnetb1', 'efficientnetb2', 'efficientnetb3',
-                   'efficientnetb4', 'efficientnetb5', 'efficientnetb6', 'efficientnetb7', 'squeezenet']
+                   'efficientnetb4', 'efficientnetb5', 'efficientnetb6', 'efficientnetb7']
 
     for model_name in model_names:
         save_path = os.path.join(
