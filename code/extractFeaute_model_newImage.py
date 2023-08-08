@@ -22,22 +22,22 @@ from tensorflow.keras.models import load_model
 def extract_and_save_feature_extractor(image_folder_path, model_name, save_path):
     # Define the model and its preprocessing function based on the given model name
     model_dict = {
-        'vgg16': (VGG16, vgg_preprocess_input),
-        'resnet50': (ResNet50, resnet_preprocess_input),
-        'mobilenet': (MobileNet, mobilenet_preprocess_input),
-        'inceptionv3': (InceptionV3, inception_v3_preprocess_input),
-        'inceptionresnetv2': (InceptionResNetV2, inception_resnet_v2_preprocess_input),
-        'densenet121': (DenseNet121, densenet_preprocess_input),
-        'densenet169': (DenseNet169, densenet_preprocess_input),
-        'densenet201': (DenseNet201, densenet_preprocess_input),
-        'efficientnetb0': (EfficientNetB0, efficientnet_preprocess_input),
-        'efficientnetb1': (EfficientNetB1, efficientnet_preprocess_input),
-        'efficientnetb2': (EfficientNetB2, efficientnet_preprocess_input),
-        'efficientnetb3': (EfficientNetB3, efficientnet_preprocess_input),
-        'efficientnetb4': (EfficientNetB4, efficientnet_preprocess_input),
-        'efficientnetb5': (EfficientNetB5, efficientnet_preprocess_input),
-        'efficientnetb6': (EfficientNetB6, efficientnet_preprocess_input),
-        'efficientnetb7': (EfficientNetB7, efficientnet_preprocess_input),
+        'vgg16': (VGG16, vgg_preprocess_input, (224, 224)),
+        'resnet50': (ResNet50, resnet_preprocess_input, (224, 224)),
+        'mobilenet': (MobileNet, mobilenet_preprocess_input, (224, 224)),
+        'inceptionv3': (InceptionV3, inception_v3_preprocess_input, (299, 299)),
+        'inceptionresnetv2': (InceptionResNetV2, inception_resnet_v2_preprocess_input, (299, 299)),
+        'densenet121': (DenseNet121, densenet_preprocess_input, (224, 224)),
+        'densenet169': (DenseNet169, densenet_preprocess_input, (224, 224)),
+        'densenet201': (DenseNet201, densenet_preprocess_input, (224, 224)),
+        'efficientnetb0': (EfficientNetB0, efficientnet_preprocess_input, (224, 224)),
+        'efficientnetb1': (EfficientNetB1, efficientnet_preprocess_input, (240, 240)),
+        'efficientnetb2': (EfficientNetB2, efficientnet_preprocess_input, (260, 260)),
+        'efficientnetb3': (EfficientNetB3, efficientnet_preprocess_input, (300, 300)),
+        'efficientnetb4': (EfficientNetB4, efficientnet_preprocess_input, (380, 380)),
+        'efficientnetb5': (EfficientNetB5, efficientnet_preprocess_input, (456, 456)),
+        'efficientnetb6': (EfficientNetB6, efficientnet_preprocess_input, (528, 528)),
+        'efficientnetb7': (EfficientNetB7, efficientnet_preprocess_input, (600, 600)),
     }
 
     if model_name.lower() not in model_dict:
@@ -60,7 +60,7 @@ def extract_and_save_feature_extractor(image_folder_path, model_name, save_path)
     for file_name in image_file_names:
         image_path = os.path.join(image_folder_path, file_name)
         try:
-            img = load_img(image_path, target_size=base_model.input_shape[1:3])
+            img = load_img(image_path, target_size=model_dict[model_name.lower()][2])
         except Exception as e:
             print(f"Error loading image {image_path}: {e}")
             continue
