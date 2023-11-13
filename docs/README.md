@@ -64,7 +64,7 @@ The literature review provides a comprehensive overview of existing research rel
 
 The proposed methodology outlines a multi-stage approach to enhance the accuracy of DL models in histopathological image analysis. The research focuses on addressing challenges associated with traditional staining techniques (H&E) and the cost implications of resorting to immunohistochemistry (IHC). The key elements of the methodology include:
 
-![Alt text](/docs/images/methodology.png "a title")
+![Methodology of the study](./images/methodology.png "Methodology of the study")
 
 1. **Collection of Diverse Medical Image Datasets:**
 
@@ -119,7 +119,7 @@ The proposed methodology outlines a multi-stage approach to enhance the accuracy
 
 ### Integration of Explainable AI (XAI):
 
-![Explained AI in cancer cell detection](/docs/images/xai.png "Explained AI in cancer cell detection")
+![Explained AI in cancer cell detection](./images/xai.png "Explained AI in cancer cell detection")
 
 - Applying XAI techniques such as LIME (Local Interpretable Model-agnostic Explanations) and SHAP (Shapley Additive exPlanations) to interpret and explain the decisions made by DL models.
 - Enhancing the transparency and interpretability of the models to instill user trust and confidence.
@@ -142,17 +142,17 @@ The proposed methodology outlines a multi-stage approach to enhance the accuracy
    - Analyzed key metrics, including accuracy, precision, recall, and F1 score, to assess the effectiveness of each model.
    - Identified the most promising DL model based on overall performance, sensitivity to metastatic tissues, and computational efficiency.
    - The comparative analysis provides insights into the strengths and weaknesses of each model, guiding further experimentation in the proposed methodology.
-     ![Result for various model accuracy for transfer learning analysis](/docs/images/benchmark.png "Result for various model accuracy for transfer learning analysis")
+     ![Result for various model accuracy for transfer learning analysis](./images/benchmark.png "Result for various model accuracy for transfer learning analysis")
 
 2. **SHAP and LIME Test Results for Model Interpretability:**
    - Applied SHAP (Shapley Additive exPlanations) and LIME (Local Interpretable Model-agnostic Explanations) to interpret and explain the decisions made by the selected DL model.
    - Analyzed the results of SHAP and LIME tests to enhance the interpretability of the model's predictions.
    - Examined specific instances where SHAP and LIME provided insights into the features influencing the model's decision-making process.
    - The interpretability achieved through SHAP and LIME contributes to user trust and understanding of DL model decisions in the context of histopathological image analysis.
-     ![SHAP positive image result](/docs/images/shappoisitive.png "SHAP positive image result")
-     ![SHAP Negative image result](/docs/images/shapnegative.png "SHAP Negative image result")
-     ![LIME positive image result](/docs/images/limepoisitive.png "LIME positive image result")
-     ![LIME Negative image result](/docs/images/limenegative.png "LIME Negative image result")
+     ![SHAP positive image result](./images/shappoisitive.png "SHAP positive image result")
+     ![SHAP Negative image result](./images/shapnegative.png "SHAP Negative image result")
+     ![LIME positive image result](./images/limepoisitive.png "LIME positive image result")
+     ![LIME Negative image result](./images/limenegative.png "LIME Negative image result")
 
 ## Conclusion
 
