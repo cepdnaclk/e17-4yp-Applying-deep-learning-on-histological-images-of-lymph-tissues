@@ -17,6 +17,9 @@ We're developing a deep learning model to detect cancer cells in lymph nodes. Ty
 
 ### External Links
 
+[//]: # ( NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS )
+
+- [Project Repository](https://github.com/cepdnaclk/e17-4yp-Applying-deep-learning-on-histological-images-of-lymph-tissues)
+- [Project Page](https://cepdnaclk.github.io/e17-4yp-Applying-deep-learning-on-histological-images-of-lymph-tissues/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
-- [Faculty of Engineering](http://www.eng.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
