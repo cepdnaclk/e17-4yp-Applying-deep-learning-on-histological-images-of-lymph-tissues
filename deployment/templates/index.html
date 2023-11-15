@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metastatic Tissue Detection</title>
+    <style>
+        html {
+            font-size: 17px;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .form__fieldset {
+            padding: 40px 20px;
+        }
+
+        .form__fieldset:not(:last-of-type) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .form__input {
+            font-size: 1rem;
+        }
+
+        .form__select {
+            padding: 4px 2px;
+        }
+
+        .form__label {
+            margin-right: 20px;
+        }
+
+        .form__submit {
+            padding: 8px 16px;
+            background-color: unset;
+            border: 2px solid #1c2023;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .form__submit:hover {
+            background-color: #1c2023;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Metastatic Tissue Detection</h1>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <label class="form__fieldset">Image Type:</label>
+                <input type="radio" name="type" value="PATCH" required checked/> PATCH
+                <input type="radio" name="type" value="WSI" required /> WSI
+               
+                <br />
+
+                <label class="form__fieldset">Coloring: </label>
+                <input type="radio" name="color_type" value="IHC" checked required /> IHC
+                <input type="radio" name="color_type" value="HE" required /> HE
+                <input type="radio" name="color_type" value="Color" required /> Color
+                <br />
+
+                <label class="form__fieldset">Model: </label>
+                <input type="radio" name="model" value="VGG16" checked required /> VGG16
+                <input type="radio" name="model" value="VGG19" required /> VGG19
+                <input type="radio" name="model" value="ResNet" required /> ResNet
+                <input type="radio" name="model" value="EfficientNet" required /> EfficientNet
+                <br />
+                <br />
+
+                <input
+                    type="file"
+                    name="file"
+                    accept=".png, .jpg, .jpeg"
+                    id="imageInput"
+                    required
+                />
+                <button type="submit">Upload Image</button>
+            </form>
+            {% if lime_path is defined %}
+            <div id ="explainable">
+                <div>
+                    <div>
+                    <h2>LIME XAI Detection</h2>
+                    Blue/Green: Positive </br>
+                    Red/Yellow: Negative </br>
+                    Gray/Neutral: Minimal impact</br></br>
+                    </div>
+                <div>
+                </div>
+                </div>
+                <img width="200px" id="selectedImage" src="{{ selected_image }}" alt="Selected Image" />
+                <img width="100px" id="selectedImage" src="/static/arrow.png" style="margin-bottom: 75px;">
+                <img width="200px" id="selectedImage" src="/{{ lime_path }}" alt="Selected Image" />
+            </div>
+            {% endif %}
+            {% if shap_path is defined %}
+            <div id ="explainable1">
+                <h2>SHAP XAI Detection</h2>
+                Red Color: Positive </br>
+                Blue Color: Negative </br>
+                Gray/Neutral: Minimal impact</br>
+                Intensity of Color:  contribution strength</br></br>
+                <img width="100%" id="selectedImage" src="/{{ shap_path }}" alt="Selected Image" />
+            </div>
+            {% endif %}
+        </div>
+
+        <div id='prediction'>
+            {% if prediction is defined %}
+                <p id="result">
+                    Class 0: Negative <br />
+                    Class 1: Early Stage <br />
+                    Class 2: Advanced Stage <br />
+                    Class 3: Positive <br />
+                </p>
+                <h2 id="result3">Result</h2>
+                <p id="result2">
+                    Prediction: class {{ prediction }}
+                </p>
+            {% endif %}
+            {% if selected_image is defined %}
+                <p id="result1">Selected Image:</p>
+                <img width="400px" id="selectedImage" src="{{ selected_image }}" alt="Selected Image" />
+            {% endif %}
+        </div>
+    </div>
+    <!-- <img src="/static/cat.jpg" /> -->
+    <script>
+        // JavaScript to update the image source dynamically
+        document.getElementById("imageInput").addEventListener("change", function (event) {
+            var selectedImage = document.getElementById("selectedImage");
+            selectedImage.style.visibility = "hidden";
+            console.log(event.target.files[0].name);
+            console.log(URL.createObjectURL(event.target.files[0]));
+            document.getElementById("explainable").style.visibility = "hidden";
+            document.getElementById("explainable1").style.visibility = "hidden";
+            document.getElementById("prediction").style.visibility = "hidden";
+        });
+    </script>
+</body>
+</html>
